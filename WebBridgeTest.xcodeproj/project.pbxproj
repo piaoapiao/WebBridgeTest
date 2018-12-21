@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381B8CE780E92755ED736557 /* libPods-WebBridgeTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8072EA55AA033C83A1BF3461 /* libPods-WebBridgeTest.a */; };
 		46216DB421CC85F800145B48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46216DB321CC85F800145B48 /* AppDelegate.m */; };
 		46216DB721CC85F800145B48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46216DB621CC85F800145B48 /* ViewController.m */; };
 		46216DBA21CC85F800145B48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46216DB821CC85F800145B48 /* Main.storyboard */; };
@@ -26,6 +27,9 @@
 		46216DBE21CC85FA00145B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46216DC021CC85FA00145B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46216DC121CC85FA00145B48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		645F334C162FB05166C2F98E /* Pods-WebBridgeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebBridgeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebBridgeTest/Pods-WebBridgeTest.release.xcconfig"; sourceTree = "<group>"; };
+		8072EA55AA033C83A1BF3461 /* libPods-WebBridgeTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebBridgeTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EE1091297C45BACC97E4D29 /* Pods-WebBridgeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebBridgeTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebBridgeTest/Pods-WebBridgeTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381B8CE780E92755ED736557 /* libPods-WebBridgeTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				46216DB121CC85F800145B48 /* WebBridgeTest */,
 				46216DB021CC85F800145B48 /* Products */,
+				E652841EB2503CE8B9464893 /* Pods */,
+				75F4D81AEA717C9384A946A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = WebBridgeTest;
 			sourceTree = "<group>";
 		};
+		75F4D81AEA717C9384A946A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8072EA55AA033C83A1BF3461 /* libPods-WebBridgeTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E652841EB2503CE8B9464893 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EE1091297C45BACC97E4D29 /* Pods-WebBridgeTest.debug.xcconfig */,
+				645F334C162FB05166C2F98E /* Pods-WebBridgeTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46216DC521CC85FA00145B48 /* Build configuration list for PBXNativeTarget "WebBridgeTest" */;
 			buildPhases = (
+				EE099D78F4C7457BA45D30F8 /* [CP] Check Pods Manifest.lock */,
 				46216DAB21CC85F800145B48 /* Sources */,
 				46216DAC21CC85F800145B48 /* Frameworks */,
 				46216DAD21CC85F800145B48 /* Resources */,
@@ -135,6 +160,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EE099D78F4C7457BA45D30F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebBridgeTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46216DAB21CC85F800145B48 /* Sources */ = {
@@ -283,15 +329,13 @@
 		};
 		46216DC621CC85FA00145B48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EE1091297C45BACC97E4D29 /* Pods-WebBridgeTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VGYK7VPF6P;
 				INFOPLIST_FILE = WebBridgeTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dazhi.viewtest.WebBridgeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,15 +344,13 @@
 		};
 		46216DC721CC85FA00145B48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 645F334C162FB05166C2F98E /* Pods-WebBridgeTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VGYK7VPF6P;
 				INFOPLIST_FILE = WebBridgeTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dazhi.viewtest.WebBridgeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
