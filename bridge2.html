@@ -22,6 +22,8 @@
       //   setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
       // }
 
+      var h5Bridge;
+
       function setupWebViewJavascriptBridge(callback) {
 		if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
 		if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
@@ -45,6 +47,8 @@
 	bridge.callHandler('showAppPage', {'key':'value'}, function responseCallback(responseData) {
 		console.log("JS received response:", responseData)
 	})
+
+	h5Bridge = bridge;
 })
     
 
@@ -54,7 +58,12 @@
 			console.log("test")
 			alert("click");	
 			data = {"name":"wgd"}
-			bridge.callHandler("showAppPage", data)		
+			// bridge.callHandler("showAppPage", data)		
+
+
+				h5Bridge.callHandler('showAppPage', {'key':'value'}, function responseCallback(responseData) {
+		console.log("JS received response:", responseData)
+	})
 		}
 	</script>
 </head>
