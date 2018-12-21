@@ -5,6 +5,50 @@
 	<title>Document</title>
 
 	<script  type="text/javascript">
+
+  		window.onerror = function(err) {
+        log('window.onerror: ' + err)
+      }
+    
+      // /*这段代码是固定的，必须要放到js中*/
+      // function setupWebViewJavascriptBridge(callback) {
+      //   if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+      //   if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+      //   window.WVJBCallbacks = [callback];
+      //   var WVJBIframe = document.createElement('iframe');
+      //   WVJBIframe.style.display = 'none';
+      //   WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+      //   document.documentElement.appendChild(WVJBIframe);
+      //   setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+      // }
+
+      function setupWebViewJavascriptBridge(callback) {
+		if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+		if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+		window.WVJBCallbacks = [callback];
+		var WVJBIframe = document.createElement('iframe');
+		WVJBIframe.style.display = 'none';
+		WVJBIframe.src = 'https://__bridge_loaded__';
+		document.documentElement.appendChild(WVJBIframe);
+		setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+	}
+
+	setupWebViewJavascriptBridge(function(bridge) {
+	
+	/* Initialize your app here */
+
+	bridge.registerHandler('jsmethod', function(data, responseCallback) {
+		console.log("JS Echo called with:", data)
+		responseCallback(data)
+	})
+
+	bridge.callHandler('showAppPage', {'key':'value'}, function responseCallback(responseData) {
+		console.log("JS received response:", responseData)
+	})
+})
+    
+
+
 		function clickButton()
 		{
 			console.log("test")
