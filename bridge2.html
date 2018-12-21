@@ -59,10 +59,9 @@
 			alert("click");	
 			data = {"name":"wgd"}
 			// bridge.callHandler("showAppPage", data)		
-
-
-				h5Bridge.callHandler('showAppPage', {'key':'value'}, function responseCallback(responseData) {
+			h5Bridge.callHandler('showAppPage', data, function responseCallback(responseData) {
 		console.log("JS received response:", responseData)
+			
 	})
 		}
 	</script>
