@@ -56,12 +56,12 @@
 		function clickButton()
 		{
 			console.log("test")
-			alert("click");	
+			// alert("click");	
 			data = {"name":"wgd"}
 			// bridge.callHandler("showAppPage", data)		
 			h5Bridge.callHandler('showAppPage', data, function responseCallback(responseData) {
-		console.log("JS received response:", responseData)
-			
+			console.log("JS received response:", responseData)		
+
 	})
 		}
 	</script>
