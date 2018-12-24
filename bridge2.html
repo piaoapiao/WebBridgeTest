@@ -41,12 +41,16 @@
 
 	bridge.registerHandler('jsmethod', function(data, responseCallback) {
 		console.log("JS Echo called with:", data)
+		alert('jsmethod');
 		responseCallback(data)
 	})
 
 	bridge.callHandler('showAppPage', {'key':'value'}, function responseCallback(responseData) {
 		console.log("JS received response:", responseData)
 	})
+
+
+
 
 	h5Bridge = bridge;
 })

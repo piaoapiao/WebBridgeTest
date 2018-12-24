@@ -179,6 +179,7 @@
     if (webView != _webView) { return YES; }
     
     NSURL *url = [request URL];
+    NSLog(@"url:%@",url);
     __strong WVJB_WEBVIEW_DELEGATE_TYPE* strongDelegate = _webViewDelegate;
     if ([_base isWebViewJavascriptBridgeURL:url]) {
         if ([_base isBridgeLoadedURL:url]) {

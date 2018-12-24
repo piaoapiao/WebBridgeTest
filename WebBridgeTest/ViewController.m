@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.urlString = @"http://oneccc.bid/WebBridgeTest/bridge.html";
+    
+//    self.urlString = @"http://server.sit.maiyafenqi.com/user/returnurl.html";
+    
 //    self.urlString = @"https://baidu.com";
     [self createBridge];
     [self registerMessage];
@@ -56,6 +59,12 @@
     [self.bridge registerHandler:@"showAppPage" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSDictionary *dataDict = (NSDictionary *)data;
         NSLog(@"dataDict:%@",data);
+        NSDictionary *dic = @{@"name":@"tian"};
+//        [self.bridge callHandler:@"jsmethod" data:dic];
+        
+        [self.bridge callHandler:@"jsmethod" data:dic responseCallback:^(id responseData) {
+            NSLog(@"receive response from jsmethod:%",responseData);
+        }];
     }];
     
 }
